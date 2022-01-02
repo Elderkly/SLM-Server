@@ -15,6 +15,10 @@
         <property name="bookMapper" ref="bookMapper"/>
     </bean>
 
+    <bean id="MenuServiceImpl" class="com.kuang.service.MenuServiceImpl">
+        <property name="menuMapper" ref="menuMapper"/>
+    </bean>
+
     <!-- 配置事务管理器 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <!-- 注入数据库连接池 -->

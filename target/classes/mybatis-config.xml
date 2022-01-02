@@ -8,5 +8,6 @@
     </typeAliases>
     <mappers>
         <mapper resource="com/kuang/dao/BookMapper.xml"/>
+        <mapper resource="com/kuang/dao/MenuMapper.xml"/>
     </mappers>
 </configuration>
