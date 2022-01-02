@@ -6,35 +6,35 @@
 <mapper namespace="com.kuang.dao.BookMapper">
     <!--增加一个Book-->
     <insert id="addBook" parameterType="Books">
-        insert into ssmbuild.books(bookName,bookCounts,detail)
+        insert into slm.books(bookName,bookCounts,detail)
         values (#{bookName}, #{bookCounts}, #{detail})
     </insert>
 
     <!--根据id删除一个Book-->
     <delete id="deleteBookById" parameterType="int">
-        delete from ssmbuild.books where bookID=#{bookID}
+        delete from slm.books where bookID=#{bookID}
     </delete>
 
     <!--更新Book-->
     <update id="updateBook" parameterType="Books">
-        update ssmbuild.books
+        update slm.books
         set bookName = #{bookName},bookCounts = #{bookCounts},detail = #{detail}
         where bookID = #{bookID}
     </update>
 
     <!--根据id查询,返回一个Book-->
     <select id="queryBookById" resultType="Books">
-        select * from ssmbuild.books
+        select * from slm.books
         where bookID = #{bookID}
     </select>
 
     <!--查询全部Book-->
     <select id="queryAllBook" resultType="Books">
-        SELECT * from ssmbuild.books
+        SELECT * from slm.books
     </select>
 
     <!--    搜索书籍-->
     <select id="queryBookByName" resultType="Books">
-        select * from ssmbuild.books where bookName = #{bookName}
+        select * from slm.books where bookName = #{bookName}
     </select>
 </mapper>
