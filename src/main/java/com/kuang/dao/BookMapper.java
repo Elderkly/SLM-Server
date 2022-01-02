@@ -1,6 +1,7 @@
 package com.kuang.dao;
 
 import com.kuang.pojo.Books;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -19,4 +20,7 @@ public interface BookMapper {
 
     //查询全部Book,返回list集合
     List<Books> queryAllBook();
+
+    //  搜索书籍
+    Books queryBookByName(@PathVariable("bookName") String bookName);
 }

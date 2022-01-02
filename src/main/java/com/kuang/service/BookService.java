@@ -1,6 +1,7 @@
 package com.kuang.service;
 
 import com.kuang.pojo.Books;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -16,4 +17,6 @@ public interface BookService {
     Books queryBookById(int id);
     //查询全部Book,返回list集合
     List<Books> queryAllBook();
+
+    Books queryBookByName(String bookName);
 }

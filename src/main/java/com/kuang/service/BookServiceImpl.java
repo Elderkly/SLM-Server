@@ -2,6 +2,8 @@ package com.kuang.service;
 
 import com.kuang.dao.BookMapper;
 import com.kuang.pojo.Books;
+import org.springframework.web.bind.annotation.PathVariable;
+
 import java.util.List;
 
 public class BookServiceImpl implements BookService {
@@ -31,5 +33,9 @@ public class BookServiceImpl implements BookService {
 
     public List<Books> queryAllBook() {
         return bookMapper.queryAllBook();
+    }
+
+    public Books queryBookByName(String bookName){
+        return bookMapper.queryBookByName(bookName);
     }
 }
