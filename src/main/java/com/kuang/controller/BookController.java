@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.awt.print.Book;
 import java.util.ArrayList;
@@ -26,6 +27,13 @@ public class BookController {
         List<Books> list = bookService.queryAllBook();
         model.addAttribute("list", list);
         return "allBook";
+    }
+
+    @RequestMapping("/test")
+    @ResponseBody
+    public List<Books> test(Model model) {
+        List<Books> list = bookService.queryAllBook();
+        return list;
     }
 
     @RequestMapping("/toAddBook")
