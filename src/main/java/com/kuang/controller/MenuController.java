@@ -1,5 +1,6 @@
 package com.kuang.controller;
 
+import com.kuang.pojo.Books;
 import com.kuang.pojo.Menu;
 import com.kuang.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,31 @@ public class MenuController {
         try{
             System.out.println(menu);
             menuService.updateMenu(menu);
+            return 1;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    @ResponseBody
+    @RequestMapping("/deleteMenu/{menuID}")
+    public int deleteBook(@PathVariable("menuID") int menuID) {
+        try {
+            menuService.deleteMenuById(menuID);
+            return 1;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/addMenu",method = RequestMethod.POST)
+    public int addMenu(@RequestBody Menu menu) {
+        try {
+            System.out.println(menu);
+            menuService.addMenu(menu);
             return 1;
         } catch (Exception e) {
             e.printStackTrace();
