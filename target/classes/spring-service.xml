@@ -19,6 +19,14 @@
         <property name="menuMapper" ref="menuMapper"/>
     </bean>
 
+    <bean id="SchoolServiceImpl" class="com.kuang.service.SchoolServiceImpl">
+        <property name="schoolMapper" ref="schoolMapper"/>
+    </bean>
+
+    <bean id="CanteenServiceImpl" class="com.kuang.service.CanteenServiceImpl">
+        <property name="canteenMapper" ref="canteenMapper"/>
+    </bean>
+
     <!-- 配置事务管理器 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <!-- 注入数据库连接池 -->

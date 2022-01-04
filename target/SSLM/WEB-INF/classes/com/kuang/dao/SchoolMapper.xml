@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kuang.dao.SchoolMapper">
+    <!--增加一个Book-->
+    <insert id="addSchool" parameterType="School">
+        insert into slm.school(schoolName,canteenCount,img)
+        values (#{schoolName}, #{canteenCount}, #{img})
+    </insert>
+
+    <!--根据id删除一个Book-->
+    <delete id="deleteSchoolById" parameterType="int">
+        delete from slm.school where schoolID=#{schoolID}
+    </delete>
+
+    <!--根据id查询,返回一个Book-->
+    <select id="querySchoolById" resultType="School">
+        select * from slm.school
+        where schoolID = #{schoolID}
+    </select>
+
+    <!--查询全部Book-->
+    <select id="queryAllSchool" resultType="School">
+        SELECT * from slm.school ORDER BY schoolID desc
+    </select>
+
+    <!--更新Book-->
+    <update id="updateSchool" parameterType="School">
+        update slm.school
+        set schoolName = #{schoolName}
+        where schoolID = #{schoolID}
+    </update>
+<!--    &lt;!&ndash;    搜索书籍&ndash;&gt;-->
+<!--    <select id="queryBookMenuName" resultType="Menu">-->
+<!--        select * from slm.menu where menuName = #{menuName}-->
+<!--    </select>-->
+</mapper>

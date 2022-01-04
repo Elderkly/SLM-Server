@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kuang.dao.CanteenMapper">
+    <!--增加一个Book-->
+    <insert id="addCanteen" parameterType="Canteen">
+        insert into slm.canteen(canteenName,schoolID)
+        values (#{canteenName}, #{schoolID});
+        UPDATE slm.school set canteenCount = canteenCount + 1 where schoolID = #{schoolID};
+    </insert>
+
+    <!--根据id删除一个Book-->
+    <delete id="deleteCanteenById" parameterType="Canteen">
+        delete from slm.canteen where canteenID=#{canteenID};
+        UPDATE slm.school set canteenCount = canteenCount - 1 where schoolID = #{schoolID};
+    </delete>
+
+    <!--根据id查询,返回一个Book-->
+    <select id="queryCanteenBySchoolID" resultType="Canteen">
+        select * from slm.canteen
+        where schoolID = #{schoolID}
+    </select>
+
+    <!--查询全部Book-->
+    <select id="queryAllCanteen" resultType="Canteen">
+        SELECT * from slm.canteen ORDER BY canteenID desc
+    </select>
+
+    <!--更新Book-->
+    <update id="updateCanteen" parameterType="Canteen">
+        update slm.canteen
+        set canteenName = #{canteenName}
+        where canteenID = #{canteenID}
+    </update>
+<!--    &lt;!&ndash;    搜索书籍&ndash;&gt;-->
+<!--    <select id="queryBookMenuName" resultType="Menu">-->
+<!--        select * from slm.menu where menuName = #{menuName}-->
+<!--    </select>-->
+</mapper>

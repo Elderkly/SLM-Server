@@ -9,5 +9,7 @@
     <mappers>
         <mapper resource="com/kuang/dao/BookMapper.xml"/>
         <mapper resource="com/kuang/dao/MenuMapper.xml"/>
+        <mapper resource="com/kuang/dao/SchoolMapper.xml"/>
+        <mapper resource="com/kuang/dao/CanteenMapper.xml"/>
     </mappers>
 </configuration>
