@@ -1,6 +1,7 @@
 package com.kuang.service;
 
 import com.kuang.pojo.Canteen;
+import com.kuang.pojo.CanteenMenuRecord;
 import com.kuang.pojo.School;
 
 import java.util.List;
@@ -20,4 +21,10 @@ public interface CanteenService {
 
     //更新Book
     int updateCanteen(Canteen canteen);
+
+    int addCanteenMenuRecord(CanteenMenuRecord canteenMenuRecord);
+
+    List<CanteenMenuRecord> getCanteenMenuRecord(int canteenID);
+
+    int getMaxCanteenID();
 }

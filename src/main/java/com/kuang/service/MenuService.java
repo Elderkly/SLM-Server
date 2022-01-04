@@ -18,5 +18,5 @@ public interface MenuService {
 
     List<Menu> queryAllMenu();
 
-    Menu queryBookMenuName(String menuName);
+    List<Menu> queryMenuName(String menuName);
 }

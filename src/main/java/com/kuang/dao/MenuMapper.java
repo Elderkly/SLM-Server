@@ -23,5 +23,5 @@ public interface MenuMapper {
     List<Menu> queryAllMenu();
 
     //  搜索书籍
-    Menu queryBookMenuName(@PathVariable("menuName") String menuName);
+    List<Menu> queryMenuName(@PathVariable("menuName") String menuName);
 }

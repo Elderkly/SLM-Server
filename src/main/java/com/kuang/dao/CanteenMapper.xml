@@ -6,8 +6,8 @@
 <mapper namespace="com.kuang.dao.CanteenMapper">
     <!--增加一个Book-->
     <insert id="addCanteen" parameterType="Canteen">
-        insert into slm.canteen(canteenName,schoolID)
-        values (#{canteenName}, #{schoolID});
+        insert into slm.canteen(canteenID,canteenName,schoolID)
+        values (#{canteenID},#{canteenName}, #{schoolID});
         UPDATE slm.school set canteenCount = canteenCount + 1 where schoolID = #{schoolID};
     </insert>
 
@@ -34,6 +34,24 @@
         set canteenName = #{canteenName}
         where canteenID = #{canteenID}
     </update>
+
+    <insert id="addCanteenMenuRecord" parameterType="CanteenMenuRecord">
+<!--        <if test="canteenID == 0">-->
+<!--            INSERT INTO slm.canteen_menu_record(canteenID,canteenName,schoolID,menuID,menuName,calorie,menuType,img) VALUES-->
+<!--            ((SELECT MAX(canteenID + 1) canteenID from slm.canteen),#{canteenName},#{schoolID},#{menuID},#{menuName},#{calorie},#{menuType},#{img});-->
+<!--        </if>-->
+<!--        <if test="canteenID != 0">-->
+            INSERT INTO slm.canteen_menu_record(canteenID,canteenName,schoolID,menuID,menuName,calorie,menuType,img) VALUES
+            (#{canteenID},#{canteenName},#{schoolID},#{menuID},#{menuName},#{calorie},#{menuType},#{img});
+<!--        </if>-->
+    </insert>
+
+    <select id="getMaxCanteenID" resultType="int">
+        SELECT MAX(canteenID) canteenID from slm.canteen
+    </select>
+    <select id="getCanteenMenuRecord" resultType="CanteenMenuRecord">
+        select * from slm.canteen_menu_record where canteenID = ${canteenID}
+    </select>
 <!--    &lt;!&ndash;    搜索书籍&ndash;&gt;-->
 <!--    <select id="queryBookMenuName" resultType="Menu">-->
 <!--        select * from slm.menu where menuName = #{menuName}-->

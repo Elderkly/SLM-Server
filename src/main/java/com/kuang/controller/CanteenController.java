@@ -1,6 +1,7 @@
 package com.kuang.controller;
 
 import com.kuang.pojo.Canteen;
+import com.kuang.pojo.CanteenMenuRecord;
 import com.kuang.pojo.School;
 import com.kuang.service.CanteenService;
 import com.kuang.service.SchoolService;
@@ -72,5 +73,29 @@ public class CanteenController {
         return 0;
     }
 
+    @ResponseBody
+    @RequestMapping("/getCanteenMenuRecord/{canteenID}")
+    public List<CanteenMenuRecord> getCanteenMenuRecord(@PathVariable("canteenID") int canteenID) {
+        List<CanteenMenuRecord> list = canteenService.getCanteenMenuRecord(canteenID);
+        return list;
+    }
 
+    @ResponseBody
+    @RequestMapping(value = "/addCanteenMenuRecord", method = RequestMethod.POST)
+    public int addCanteenMenuRecord(@RequestBody CanteenMenuRecord canteenMenuRecord) {
+        try {
+            System.out.println(canteenMenuRecord);
+            canteenService.addCanteenMenuRecord(canteenMenuRecord);
+            return 1;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    @ResponseBody
+    @RequestMapping("/getMaxCanteenID")
+    public int getMaxCanteenID() {
+        return canteenService.getMaxCanteenID();
+    }
 }

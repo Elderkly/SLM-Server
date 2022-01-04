@@ -34,7 +34,7 @@
     </select>
 
     <!--    搜索书籍-->
-    <select id="queryBookMenuName" resultType="Menu">
-        select * from slm.menu where menuName = #{menuName}
+    <select id="queryMenuName" resultType="Menu">
+        select * from slm.menu where menuName LIKE concat('%',#{menuName},'%')
     </select>
 </mapper>

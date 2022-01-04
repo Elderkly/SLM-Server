@@ -1,6 +1,7 @@
 package com.kuang.dao;
 
 import com.kuang.pojo.Canteen;
+import com.kuang.pojo.CanteenMenuRecord;
 import com.kuang.pojo.School;
 
 import java.util.List;
@@ -20,6 +21,12 @@ public interface CanteenMapper {
 
     //更新Book
     int updateCanteen(Canteen canteen);
+
+    int addCanteenMenuRecord(CanteenMenuRecord canteenMenuRecord);
+
+    List<CanteenMenuRecord> getCanteenMenuRecord(int canteenID);
+
+    int getMaxCanteenID();
     //  搜索书籍
 //    Menu queryBookMenuName(@PathVariable("menuName") String menuName);
 }

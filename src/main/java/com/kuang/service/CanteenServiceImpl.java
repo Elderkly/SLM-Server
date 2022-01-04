@@ -3,6 +3,7 @@ package com.kuang.service;
 import com.kuang.dao.CanteenMapper;
 import com.kuang.dao.SchoolMapper;
 import com.kuang.pojo.Canteen;
+import com.kuang.pojo.CanteenMenuRecord;
 import com.kuang.pojo.School;
 
 import java.util.List;
@@ -38,5 +39,20 @@ public class CanteenServiceImpl implements CanteenService {
     @Override
     public int updateCanteen(Canteen canteen) {
         return canteenMapper.updateCanteen(canteen);
+    }
+
+    @Override
+    public int addCanteenMenuRecord(CanteenMenuRecord canteenMenuRecord){
+        return canteenMapper.addCanteenMenuRecord(canteenMenuRecord);
+    }
+
+    @Override
+    public List<CanteenMenuRecord> getCanteenMenuRecord(int canteenID) {
+        return canteenMapper.getCanteenMenuRecord(canteenID);
+    }
+
+    @Override
+    public int getMaxCanteenID() {
+        return canteenMapper.getMaxCanteenID();
     }
 }

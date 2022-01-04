@@ -40,7 +40,7 @@ public class MenuServiceImpl implements MenuService {
     }
 
     @Override
-    public Menu queryBookMenuName(String menuName) {
-        return menuMapper.queryBookMenuName(menuName);
+    public List<Menu> queryMenuName(String menuName) {
+        return menuMapper.queryMenuName(menuName);
     }
 }

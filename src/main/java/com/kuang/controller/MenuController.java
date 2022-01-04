@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.xml.ws.RequestWrapper;
 import java.util.List;
 
 @Controller
@@ -62,4 +63,13 @@ public class MenuController {
         }
         return 0;
     }
+
+    @ResponseBody
+    @RequestMapping("/search/{menuName}")
+    public List<Menu> searchMenu(@PathVariable("menuName") String menuName) {
+        System.out.println(menuName);
+        List<Menu> list = menuService.queryMenuName(menuName);
+        return list;
+    }
+
 }
