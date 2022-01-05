@@ -107,6 +107,22 @@
       <artifactId>jackson-databind</artifactId>
       <version>2.11.0</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>4.5.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpmime</artifactId>
+      <version>4.5.3</version>
+    </dependency>
+    <dependency>
+      <groupId>cn.bestwu</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2-unwrap</version>
+    </dependency>
   </dependencies>
 
   <build>

@@ -27,6 +27,10 @@
         <property name="canteenMapper" ref="canteenMapper"/>
     </bean>
 
+    <bean id="UserServiceImpl" class="com.kuang.service.UserServiceImpl">
+        <property name="userMapper" ref="userMapper"/>
+    </bean>
+
     <!-- 配置事务管理器 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <!-- 注入数据库连接池 -->

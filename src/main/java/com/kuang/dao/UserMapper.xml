@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kuang.dao.UserMapper">
+    <select id="getUserInfo" resultType="User">
+        select * from slm.user where openid = #{openid};
+    </select>
+
+    <insert id="setUserInfo" parameterType="User">
+        insert into slm.user(userName,isAdmin,mobile,openid)
+        values (#{userName}, '0', #{mobile}, #{openid})
+    </insert>
+</mapper>
