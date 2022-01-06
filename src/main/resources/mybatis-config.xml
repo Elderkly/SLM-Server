@@ -12,5 +12,6 @@
         <mapper resource="com/kuang/dao/SchoolMapper.xml"/>
         <mapper resource="com/kuang/dao/CanteenMapper.xml"/>
         <mapper resource="com/kuang/dao/UserMapper.xml"/>
+        <mapper resource="com/kuang/dao/RandomRecordMapper.xml"/>
     </mappers>
 </configuration>

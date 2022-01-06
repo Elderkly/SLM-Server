@@ -31,6 +31,10 @@
         <property name="userMapper" ref="userMapper"/>
     </bean>
 
+    <bean id="RandomRecordServiceImpl" class="com.kuang.service.RandomRecordServiceImpl">
+        <property name="randomRecordMapper" ref="randomRecordMapper"/>
+    </bean>
+
     <!-- 配置事务管理器 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <!-- 注入数据库连接池 -->
