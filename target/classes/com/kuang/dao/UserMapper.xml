@@ -9,7 +9,7 @@
     </select>
 
     <insert id="setUserInfo" parameterType="User">
-        insert into slm.user(userName,isAdmin,mobile,openid)
-        values (#{userName}, '0', #{mobile}, #{openid})
+        insert into slm.user(userName,isAdmin,mobile,openid,height,weight,age)
+        values (#{userName}, '0', #{mobile}, #{openid}, 170, 60, 20)
     </insert>
 </mapper>

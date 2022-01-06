@@ -11,7 +11,7 @@
  Target Server Version : 80027
  File Encoding         : 65001
 
- Date: 06/01/2022 00:02:22
+ Date: 06/01/2022 21:59:30
 */
 
 SET NAMES utf8mb4;
@@ -225,6 +225,47 @@ INSERT INTO `menu` VALUES (28, '五谷渔粉', 500, '午餐，晚餐', 'https://
 COMMIT;
 
 -- ----------------------------
+-- Table structure for random_record
+-- ----------------------------
+DROP TABLE IF EXISTS `random_record`;
+CREATE TABLE `random_record` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `menuID` int NOT NULL,
+  `schoolID` int NOT NULL,
+  `userID` int NOT NULL,
+  `menuName` varchar(255) DEFAULT NULL,
+  `menuType` varchar(255) DEFAULT NULL,
+  `img` varchar(255) DEFAULT NULL,
+  `calorie` int DEFAULT NULL,
+  `schoolName` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `recordTime` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `canteenID` int NOT NULL,
+  `canteenName` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb3;
+
+-- ----------------------------
+-- Records of random_record
+-- ----------------------------
+BEGIN;
+INSERT INTO `random_record` VALUES (4, 23, 24, 4, '滑蛋饭', '午餐，晚餐', 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2961657401,1164883760&fm=26&gp=0.jpg', 500, '广东科技学院松山湖校区', '1641448700314', 134, '一饭堂');
+INSERT INTO `random_record` VALUES (5, 24, 24, 4, '炒粉', '午餐，晚餐', 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2514257278,1983004782&fm=26&gp=0.jpg', 300, '广东科技学院松山湖校区', '1641448723812', 134, '一饭堂');
+INSERT INTO `random_record` VALUES (6, 26, 24, 4, '面包', '早餐，午餐，晚餐', 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=101133576,3711215589&fm=26&gp=0.jpg', 70, '广东科技学院松山湖校区', '1641448741707', 134, '一饭堂');
+INSERT INTO `random_record` VALUES (7, 24, 24, 4, '炒粉', '午餐，晚餐', 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2514257278,1983004782&fm=26&gp=0.jpg', 300, '广东科技学院松山湖校区', '1641448760040', 134, '一饭堂');
+INSERT INTO `random_record` VALUES (8, 23, 24, 4, '滑蛋饭', '午餐，晚餐', 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2961657401,1164883760&fm=26&gp=0.jpg', 500, '广东科技学院松山湖校区', '1641448770986', 134, '一饭堂');
+INSERT INTO `random_record` VALUES (9, 16, 24, 4, '饭团', '早餐，午餐，晚餐', 'http://s2.boohee.cn/house/upload_food/2009/6/8/233779_1244417068.jpg', 300, '广东科技学院松山湖校区', '1641449009354', 134, '一饭堂');
+INSERT INTO `random_record` VALUES (10, 23, 24, 4, '滑蛋饭', '午餐，晚餐', 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2961657401,1164883760&fm=26&gp=0.jpg', 500, '广东科技学院松山湖校区', '1641449024068', 134, '一饭堂');
+INSERT INTO `random_record` VALUES (11, 16, 24, 4, '饭团', '早餐，午餐，晚餐', 'http://s2.boohee.cn/house/upload_food/2009/6/8/233779_1244417068.jpg', 300, '广东科技学院松山湖校区', '1641449139804', 134, '一饭堂');
+INSERT INTO `random_record` VALUES (12, 23, 24, 4, '滑蛋饭', '午餐，晚餐', 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2961657401,1164883760&fm=26&gp=0.jpg', 500, '广东科技学院松山湖校区', '1641449154419', 134, '一饭堂');
+INSERT INTO `random_record` VALUES (13, 23, 24, 4, '滑蛋饭', '午餐，晚餐', 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2961657401,1164883760&fm=26&gp=0.jpg', 500, '广东科技学院松山湖校区', '1641449155781', 134, '一饭堂');
+INSERT INTO `random_record` VALUES (14, 23, 24, 4, '滑蛋饭', '午餐，晚餐', 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2961657401,1164883760&fm=26&gp=0.jpg', 500, '广东科技学院松山湖校区', '1641449157265', 134, '一饭堂');
+INSERT INTO `random_record` VALUES (15, 26, 24, 4, '面包', '早餐，午餐，晚餐', 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=101133576,3711215589&fm=26&gp=0.jpg', 70, '广东科技学院松山湖校区', '1641449158822', 134, '一饭堂');
+INSERT INTO `random_record` VALUES (16, 16, 24, 4, '饭团', '早餐，午餐，晚餐', 'http://s2.boohee.cn/house/upload_food/2009/6/8/233779_1244417068.jpg', 300, '广东科技学院松山湖校区', '1641449160708', 134, '一饭堂');
+INSERT INTO `random_record` VALUES (19, 26, 24, 6, '面包', '早餐，午餐，晚餐', 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=101133576,3711215589&fm=26&gp=0.jpg', 70, '广东科技学院松山湖校区', '1641474698115', 134, '一饭堂');
+COMMIT;
+
+-- ----------------------------
 -- Table structure for school
 -- ----------------------------
 DROP TABLE IF EXISTS `school`;
@@ -256,14 +297,17 @@ CREATE TABLE `user` (
   `isAdmin` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `mobile` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `openid` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `height` int(10) unsigned zerofill DEFAULT NULL,
+  `weight` int(10) unsigned zerofill DEFAULT NULL,
+  `age` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
 BEGIN;
-INSERT INTO `user` VALUES (4, 'P', '0', NULL, 'oMBtN5MA7sl2xHGRKTwSQOCvR4VM');
+INSERT INTO `user` VALUES (6, 'P', '0', NULL, 'oMBtN5MA7sl2xHGRKTwSQOCvR4VM', 0000000170, 0000000060, 20);
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;

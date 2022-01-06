@@ -13,4 +13,7 @@ public class User {
     private String isAdmin;
     private String mobile;
     private String openid;
+    private int height;
+    private int weight;
+    private int age;
 }
