@@ -51,4 +51,16 @@ public class RandomRecordController {
         }
         return 0;
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/deleteRecord/{recordID}")
+    public int deleteRecord(@PathVariable("recordID") int recordID) {
+        try {
+            randomRecordService.deleteRecord(recordID);
+            return 1;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
 }

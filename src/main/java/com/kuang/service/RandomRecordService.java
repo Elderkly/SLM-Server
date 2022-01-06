@@ -12,4 +12,6 @@ public interface RandomRecordService {
     int changeRecord(RandomRecord randomRecord);
 
     int addChangeRecord(RandomRecord randomRecord);
+
+    int deleteRecord(int recordID);
 }

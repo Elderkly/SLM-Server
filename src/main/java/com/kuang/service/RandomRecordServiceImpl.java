@@ -30,4 +30,9 @@ public class RandomRecordServiceImpl implements RandomRecordService {
     public int addChangeRecord(RandomRecord randomRecord) {
         return randomRecordMapper.addChangeRecord(randomRecord);
     }
+
+    @Override
+    public int deleteRecord(int recordID) {
+        return randomRecordMapper.deleteRecord(recordID);
+    }
 }

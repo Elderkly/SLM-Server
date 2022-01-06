@@ -11,4 +11,6 @@ public interface RandomRecordMapper {
     int changeRecord(RandomRecord randomRecord);
 
     int addChangeRecord(RandomRecord randomRecord);
+
+    int deleteRecord(int recordID);
 }

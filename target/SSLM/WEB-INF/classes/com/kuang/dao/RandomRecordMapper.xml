@@ -15,7 +15,13 @@
 
     <update id="changeRecord" parameterType="RandomRecord">
         update slm.random_record
-        set menuID = #{menuID},schoolID = #{schoolID},menuName = #{menuName},menuType = #{menuType},calorie = #{calorie},schoolName = #{schoolName}
+        set menuID = #{menuID},schoolID = #{schoolID},menuName = #{menuName},menuType = #{menuType},calorie = #{calorie},schoolName = #{schoolName},img = #{img}
         where id = #{id}
     </update>
+
+    <!--根据id删除一个Book-->
+    <delete id="deleteRecord" parameterType="int">
+        delete from slm.random_record where id=#{recordID}
+    </delete>
+
 </mapper>
