@@ -8,9 +8,7 @@ import com.kuang.util.HttpUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/user")
@@ -59,5 +57,17 @@ public class UserController {
     @ResponseBody
     public User SelectUserInfo(@PathVariable("openid") String openid) {
         return userService.getUserInfo(openid);
+    }
+
+    @RequestMapping(value = "/changeUserInfo", method = RequestMethod.POST)
+    @ResponseBody
+    public int ChangeUserInfo(@RequestBody User user) {
+        try {
+            userService.changeUserInfo(user);
+            return 1;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 }

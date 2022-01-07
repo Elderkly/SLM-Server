@@ -25,4 +25,9 @@ public class UserServiceImpl implements UserService {
     public int setUserInfo(User user) {
         return userMapper.setUserInfo(user);
     }
+
+    @Override
+    public int changeUserInfo(User user) {
+        return userMapper.changeUserInfo(user);
+    }
 }

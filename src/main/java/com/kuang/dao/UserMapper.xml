@@ -12,4 +12,10 @@
         insert into slm.user(userName,isAdmin,mobile,openid,height,weight,age)
         values (#{userName}, '0', #{mobile}, #{openid}, 170, 60, 20)
     </insert>
+
+    <update id="changeUserInfo" parameterType="User">
+        update slm.user
+        set height = #{height},weight = #{weight},age = #{age}
+        where id = #{id}
+    </update>
 </mapper>

@@ -7,4 +7,6 @@ public interface UserMapper {
     User getUserInfo(String openid);
 
     int setUserInfo(User user);
+
+    int changeUserInfo(User user);
 }

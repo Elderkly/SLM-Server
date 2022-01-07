@@ -10,4 +10,6 @@ public interface UserService {
     User getUserInfo(String openid);
 
     int setUserInfo(User user);
+
+    int changeUserInfo(User user);
 }
