@@ -39,6 +39,10 @@
         <property name="forumMapper" ref="forumMapper"/>
     </bean>
 
+    <bean id="CommitServiceImpl" class="com.kuang.service.CommitServiceImpl">
+        <property name="commitMapper" ref="commitMapper"/>
+    </bean>
+
     <!-- 配置事务管理器 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <!-- 注入数据库连接池 -->

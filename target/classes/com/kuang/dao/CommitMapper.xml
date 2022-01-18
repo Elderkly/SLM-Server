@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kuang.dao.CommitMapper">
+
+    <insert id="addCommit" parameterType="Commit">
+        INSERT INTO slm.commit (userID,userName,userImg,baseID,fatherID,fatherUserName,content,commitType,commitTime)
+        VALUES (#{userID},#{userName},#{userImg},#{baseID},#{fatherID},#{fatherUserName},#{content},#{commitType},#{commitTime})
+    </insert>
+
+    <delete id="deleteCommit" parameterType="int">
+        delete from slm.commit where id=#{commitID};
+    </delete>
+
+    <select id="selectCommitByBaseID" resultType="Commit">
+        select * from slm.commit  where baseID=#{baseID} and commitType='forum'
+    </select>
+</mapper>
