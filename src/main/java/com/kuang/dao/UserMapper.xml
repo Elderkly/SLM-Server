@@ -9,8 +9,8 @@
     </select>
 
     <insert id="setUserInfo" parameterType="User">
-        insert into slm.user(userName,isAdmin,mobile,openid,height,weight,age)
-        values (#{userName}, '0', #{mobile}, #{openid}, 170, 60, 20)
+        insert into slm.user(userName,isAdmin,mobile,openid,height,weight,age,userImg)
+        values (#{userName}, '0', #{mobile}, #{openid}, 170, 60, 20,#{userImg})
     </insert>
 
     <update id="changeUserInfo" parameterType="User">

@@ -2,6 +2,7 @@ package com.kuang.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.kuang.pojo.Login;
+import com.kuang.pojo.LoginRequestBody;
 import com.kuang.pojo.User;
 import com.kuang.service.UserService;
 import com.kuang.util.HttpUtil;
@@ -17,18 +18,18 @@ public class UserController {
     @Qualifier("UserServiceImpl")
     private UserService userService;
 
-    @RequestMapping("/login/{code}/{nickName}")
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
-    public Login login(@PathVariable("code") String code, @PathVariable("nickName") String nickName) {
+    public Login login(@RequestBody LoginRequestBody loginRequestBody) {
 
         Login result=new Login();//登录数据的实体类，存放登录信息等
 
-        System.out.println(code);
+        System.out.println(loginRequestBody.getCode());
         //获取微信session和生成自定义token
         HttpUtil hrs = new HttpUtil();
 
         //获取session_key和openid
-        JSONObject session_key = hrs.domain("getSession_key", code);
+        JSONObject session_key = hrs.domain("getSession_key", loginRequestBody.getCode());
         String session = session_key.getString("session_key");
         String openid = session_key.getString("openid");
         String errmsg = session_key.getString("errmsg");
@@ -43,9 +44,10 @@ public class UserController {
             System.out.println(userInfo.id);
         } catch (Exception e) {
             User newUser = new User();
-            newUser.setUserName(nickName);
+            newUser.setUserName(loginRequestBody.getNickName());
             newUser.setIsAdmin("0");
             newUser.setOpenid(openid);
+            newUser.setUserImg(loginRequestBody.getUserImg());
             userService.setUserInfo(newUser);
             User newUserInfo = userService.getUserInfo(openid);
             result.setUserInfo(newUserInfo);

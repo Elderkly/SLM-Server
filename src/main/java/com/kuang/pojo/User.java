@@ -16,4 +16,5 @@ public class User {
     private int height;
     private int weight;
     private int age;
+    private String userImg;
 }

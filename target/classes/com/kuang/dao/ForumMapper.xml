@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kuang.dao.ForumMapper">
+
+    <insert id="addForum" parameterType="Forum">
+        INSERT INTO slm.forum (userImg,userName,content,menuID,menuName,calorie,schoolID,schoolName,canteenID,canteenName,recordTime,menuType,img,forumTime,forumType,userID)
+        VALUES (#{userImg},#{userName},#{content},#{menuID},#{menuName},#{calorie},#{schoolID},#{schoolName},#{canteenID},#{canteenName},#{recordTime},#{menuType},#{img},#{forumTime},#{forumType},#{userID});
+    </insert>
+
+    <delete id="deleteForum" parameterType="int">
+        delete from slm.forum where id=#{forumID};
+    </delete>
+
+    <select id="selectAllForum" resultType="Forum">
+        select * from slm.forum  ORDER BY id desc
+    </select>
+
+    <select id="selectForumByUserID" resultType="Forum">
+        SELECT * from slm.forum where userID=#{userID}
+    </select>
+</mapper>
