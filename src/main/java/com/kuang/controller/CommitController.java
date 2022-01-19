@@ -19,9 +19,9 @@ public class CommitController {
 
 
     @ResponseBody
-    @RequestMapping("/selectCommitByBaseID/{baseID}")
-    public List<Commit> selectCommitByBaseID(@PathVariable("baseID") int baseID) {
-        return commitService.selectCommitByBaseID(baseID);
+    @RequestMapping("/selectCommitByBaseID/{baseID}/{commitType}")
+    public List<Commit> selectCommitByBaseID(@PathVariable("baseID") int baseID,@PathVariable("commitType") String commitType) {
+        return commitService.selectCommitByBaseID(baseID,commitType);
     }
 
     @ResponseBody

@@ -8,5 +8,6 @@ public interface ForumMapper {
     int addForum(Forum forum);
     int deleteForum(int forumID);
     List<Forum> selectAllForum();
+    List<Forum> selectHomeForum();
     List<Forum> selectForumByUserID(int userID);
 }

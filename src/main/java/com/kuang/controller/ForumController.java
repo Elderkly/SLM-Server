@@ -36,6 +36,12 @@ public class ForumController {
     }
 
     @ResponseBody
+    @RequestMapping("/homeForum")
+    public List<Forum> homeForum() {
+        return forumService.selectHomeForum();
+    }
+
+    @ResponseBody
     @RequestMapping("/deleteForum/{forumID}")
     public int deleteForum(@PathVariable("forumID") int forumID) {
         try {

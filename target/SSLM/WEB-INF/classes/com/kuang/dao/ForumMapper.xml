@@ -21,4 +21,8 @@
     <select id="selectForumByUserID" resultType="Forum">
         SELECT * from slm.forum where userID=#{userID}
     </select>
+
+    <select id="selectHomeForum" resultType="Forum">
+        select * from slm.forum  ORDER BY id desc LIMIT 0, 10
+    </select>
 </mapper>

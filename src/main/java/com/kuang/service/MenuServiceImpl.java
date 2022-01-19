@@ -43,4 +43,9 @@ public class MenuServiceImpl implements MenuService {
     public List<Menu> queryMenuName(String menuName) {
         return menuMapper.queryMenuName(menuName);
     }
+
+    @Override
+    public List<Menu> queryHomeMenu() {
+        return menuMapper.queryHomeMenu();
+    }
 }

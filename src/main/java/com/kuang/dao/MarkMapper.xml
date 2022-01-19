@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kuang.dao.MarkMapper">
+
+    <insert id="addMark" parameterType="Mark">
+        INSERT INTO mark(baseID,score,userID,markType)
+        VALUES(#{baseID},#{score},#{userID},#{markType})
+    </insert>
+
+    <select id="getMainScoreByBaseID" resultType="MarkResponseBody">
+        SELECT AVG(score) AS 'score',COUNT(id) as 'count' from mark where baseID = #{baseID} and markType = #{markType};
+    </select>
+
+    <select id="selectUserMark" resultType="Mark">
+        select * from mark where baseID = #{baseID} and markType = #{markType} and userID = #{userID};
+    </select>
+</mapper>

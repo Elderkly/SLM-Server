@@ -21,7 +21,7 @@ public class CommitServiceImpl implements CommitService{
     }
 
     @Override
-    public List<Commit> selectCommitByBaseID(int baseID) {
-        return commitMapper.selectCommitByBaseID(baseID);
+    public List<Commit> selectCommitByBaseID(int baseID, String commitType) {
+        return commitMapper.selectCommitByBaseID(baseID,commitType);
     }
 }

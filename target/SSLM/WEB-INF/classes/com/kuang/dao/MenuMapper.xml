@@ -37,4 +37,8 @@
     <select id="queryMenuName" resultType="Menu">
         select * from slm.menu where menuName LIKE concat('%',#{menuName},'%')
     </select>
+
+    <select id="queryHomeMenu" resultType="Menu">
+        SELECT * from slm.menu ORDER BY menuID DESC LIMIT 0, 10
+    </select>
 </mapper>

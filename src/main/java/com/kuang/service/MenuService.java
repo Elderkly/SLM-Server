@@ -19,4 +19,6 @@ public interface MenuService {
     List<Menu> queryAllMenu();
 
     List<Menu> queryMenuName(String menuName);
+
+    List<Menu> queryHomeMenu();
 }

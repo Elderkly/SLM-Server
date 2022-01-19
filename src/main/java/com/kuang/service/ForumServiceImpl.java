@@ -28,4 +28,9 @@ public class ForumServiceImpl implements ForumService{
     public List<Forum> selectForumByUserID(int userID) {
         return forumMapper.selectForumByUserID(userID);
     }
+
+    @Override
+    public List<Forum> selectHomeForum() {
+        return forumMapper.selectHomeForum();
+    }
 }

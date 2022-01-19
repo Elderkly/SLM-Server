@@ -9,4 +9,5 @@ public interface ForumService {
     int deleteForum(int forumID);
     List<Forum> selectAllForum();
     List<Forum> selectForumByUserID(int userID);
+    List<Forum> selectHomeForum();
 }

@@ -26,6 +26,14 @@ public class MenuController {
         return list;
     }
 
+    @RequestMapping("/homeMenu")
+    @ResponseBody
+    public List<Menu> homeMenu() {
+        List<Menu> list = menuService.queryHomeMenu();
+        return list;
+    }
+
+
     @ResponseBody
     @RequestMapping(value = "/updateMenu",method = RequestMethod.POST)
     public int updateBook(@RequestBody Menu menu) {

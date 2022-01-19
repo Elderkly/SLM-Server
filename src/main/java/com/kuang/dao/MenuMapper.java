@@ -24,4 +24,6 @@ public interface MenuMapper {
 
     //  搜索书籍
     List<Menu> queryMenuName(@PathVariable("menuName") String menuName);
+
+    List<Menu> queryHomeMenu();
 }

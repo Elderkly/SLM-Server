@@ -15,6 +15,6 @@
     </delete>
 
     <select id="selectCommitByBaseID" resultType="Commit">
-        select * from slm.commit  where baseID=#{baseID} and commitType='forum'
+        select * from slm.commit  where baseID=#{baseID} and commitType=#{commitType}
     </select>
 </mapper>
