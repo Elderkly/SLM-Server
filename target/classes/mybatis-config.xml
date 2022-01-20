@@ -16,5 +16,6 @@
         <mapper resource="com/kuang/dao/ForumMapper.xml"/>
         <mapper resource="com/kuang/dao/CommitMapper.xml"/>
         <mapper resource="com/kuang/dao/MarkMapper.xml"/>
+        <mapper resource="com/kuang/dao/ConfigMapper.xml"/>
     </mappers>
 </configuration>

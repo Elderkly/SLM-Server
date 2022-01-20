@@ -47,6 +47,10 @@
         <property name="markMapper" ref="markMapper"/>
     </bean>
 
+    <bean id="ConfigServiceImpl" class="com.kuang.service.ConfigServiceImpl">
+        <property name="configMapper" ref="configMapper"/>
+    </bean>
+
     <!-- 配置事务管理器 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <!-- 注入数据库连接池 -->
