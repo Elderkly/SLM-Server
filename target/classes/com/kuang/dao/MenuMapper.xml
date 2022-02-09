@@ -4,41 +4,36 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.kuang.dao.MenuMapper">
-    <!--增加一个Book-->
     <insert id="addMenu" parameterType="Menu">
-        insert into slm.menu(menuName,calorie,menuType,img)
-        values (#{menuName}, #{calorie}, #{menuType}, #{img})
+        insert into slm.menu(menuName,calorie,menuType,img,menuTime)
+        values (#{menuName}, #{calorie}, #{menuType}, #{img}, #{menuTime})
     </insert>
 
-    <!--根据id删除一个Book-->
     <delete id="deleteMenuById" parameterType="int">
         delete from slm.menu where menuID=#{menuID}
     </delete>
 
-    <!--更新Book-->
     <update id="updateMenu" parameterType="Menu">
         update slm.menu
-        set menuName = #{menuName},calorie = #{calorie},menuType = #{menuType},img = #{img}
+        set menuName = #{menuName},calorie = #{calorie},menuType = #{menuType},img = #{img},menuTime = #{menuTime}
         where menuID = #{menuID}
     </update>
 
-    <!--根据id查询,返回一个Book-->
     <select id="queryMenuById" resultType="Menu">
         select * from slm.menu
         where menuID = #{menuID}
     </select>
 
-    <!--查询全部Book-->
     <select id="queryAllMenu" resultType="Menu">
-        SELECT * from slm.menu ORDER BY menuID desc
+        SELECT * from slm.menu ORDER BY menuTime desc
     </select>
 
-    <!--    搜索书籍-->
+
     <select id="queryMenuName" resultType="Menu">
         select * from slm.menu where menuName LIKE concat('%',#{menuName},'%')
     </select>
 
     <select id="queryHomeMenu" resultType="Menu">
-        SELECT * from slm.menu ORDER BY menuID DESC LIMIT 0, 10
+        SELECT * from slm.menu ORDER BY menuTime DESC LIMIT 0, 10
     </select>
 </mapper>

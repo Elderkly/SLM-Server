@@ -13,4 +13,5 @@ public class Menu {
     private int calorie;
     private String menuType;
     private String img;
+    private String menuTime;
 }
