@@ -65,4 +65,5 @@
             </table>
         </div>
     </div>
+    <a href="https://beian.miit.gov.cn/" target="_blank">备案号：粤ICP-2022014839</a>
 </div>

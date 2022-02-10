@@ -25,5 +25,6 @@
 <h3>
     <a href="${pageContext.request.contextPath}/book/allBook">点击进入列表页</a>
 </h3>
+<a href="https://beian.miit.gov.cn/" target="_blank">备案号：粤ICP-2022014839</a>
 </body>
 </html>

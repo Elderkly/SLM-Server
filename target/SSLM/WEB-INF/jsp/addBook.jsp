@@ -26,5 +26,5 @@
         书籍详情：<input type="text" name="detail"><br><br><br>
         <input type="submit" value="添加">
     </form>
-
+    <a href="https://beian.miit.gov.cn/" target="_blank">备案号：粤ICP-2022014839</a>
 </div>
